@@ -1,4 +1,6 @@
-﻿namespace MathGame.NET;
+﻿using MathGame.NET.Models;
+
+namespace MathGame.NET;
 
 internal class MathOperations
 {
@@ -45,7 +47,7 @@ internal class MathOperations
                 }
             }
         }
-        Helpers.AddtoHistory(score, "Addition");
+        Helpers.AddtoHistory(score, Game.GameType.Addition);
     }
 
     internal void SubtractionGame(string message)
@@ -81,13 +83,16 @@ internal class MathOperations
                 Console.Clear();
             }
 
-            if (i == 4) Console.WriteLine($"Your score is {score}. Press any key to continue to the main menu.");
+            if (i == 4)
             {
-                Console.ReadLine();
-                Console.Clear();
+                Console.WriteLine($"Your score is {score}. Press any key to go back to the menu");
+                {
+                    Console.ReadLine();
+                    Console.Clear();
+                }
             }
         }
-        Helpers.AddtoHistory(score, "Subtraction");
+        Helpers.AddtoHistory(score, Game.GameType.Subtraction);
     }
 
   internal void MultiplacationGame(string message)
@@ -122,14 +127,13 @@ internal class MathOperations
                 Console.ReadLine();
                 Console.Clear();
             }
-
             if (i == 4) Console.WriteLine($"Your score is {score}. Press any key to continue to the main menu.");
             {
                 Console.ReadLine();
                 Console.Clear();
             }
         }
-        Helpers.AddtoHistory(score, "Multiplication");
+        Helpers.AddtoHistory(score, Game.GameType.Multiplication);
     }
 
     internal void DivisionGame(string message)
@@ -168,6 +172,6 @@ internal class MathOperations
                 Console.Clear(); 
             }
         }
-        Helpers.AddtoHistory(score, "Division");
+        Helpers.AddtoHistory(score, Game.GameType.Division);
     }
 }

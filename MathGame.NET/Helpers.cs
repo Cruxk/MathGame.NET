@@ -44,7 +44,7 @@ internal class Helpers
         return result;
     }
 
-    internal static void AddtoHistory(int gameScore, string gameType)
+    internal static void AddtoHistory(int gameScore, Game.GameType gameType)
     {
         games.Add(new Game
         {
